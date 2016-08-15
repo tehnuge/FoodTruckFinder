@@ -1,9 +1,9 @@
+var exports = module.exports = {}	
 
 var url = 'https://data.sfgov.org/resource/6a9r-agq8.json';
-gMapsKey = 'AIzaSyD5vQG68S8OQc2Fdwz2oIDpdE91gd96Ua0';
-var lat, lng, map;
+var gMapsKey = 'AIzaSyD5vQG68S8OQc2Fdwz2oIDpdE91gd96Ua0';
+var lat, lng, map, infowindow;
 var markers = [];
-var infoWindows = [];
 var center = {lat: 37.756367, lng: -122.44370};
 
 //37.781007, -122.457992
@@ -30,16 +30,12 @@ function getLocation(address){
 				markers[i].setMap(null)
 			}
 			markers = [];
-			infoWindows = [];
 
 			getTrucks(lat, lng);
 		}
 	})
 };
-function addInfoWindow(i){
-	infoWindows[i].open(map, markers[i])
 
-}
 function getTrucks(lat, lng){
 	$.ajax({
 		type: 'GET',
@@ -50,7 +46,7 @@ function getTrucks(lat, lng){
 		},
 		success: function(data){
 			console.log(data);
-			for (var i = 0; i < data.length; i++) {
+			for (let i = 0; i < data.length; i++) {
 				(function(){
 					markers.push(new google.maps.Marker({
 									position: {lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)},
@@ -59,12 +55,12 @@ function getTrucks(lat, lng){
 								}));
 
 					var contentString = data[i].applicant + data[i].dayshours + data[i].fooditems
-					infoWindows.push(new google.maps.InfoWindow({
+					infowindow = new google.maps.InfoWindow({
     									content: contentString
-  								}));
+  								});
 
-					markers[i].addListener('click', function(i){
-						addInfoWindow(i)
+					markers[i].addListener('click', function(){
+						infowindow.open(map, markers[i])
 					});
 
 					console.log(data[i].applicant, parseFloat(data[i].latitude), parseFloat(data[i].longitude))
@@ -75,7 +71,7 @@ function getTrucks(lat, lng){
 }
 
 //Google Maps init
-function initMap() {
+exports.initMap = function() {
 
   map = new google.maps.Map(document.getElementById('map'), {
     zoom: 12,
@@ -97,3 +93,4 @@ function detectBrowser() {
     mapdiv.style.height = '800px';
   }
 }
+
