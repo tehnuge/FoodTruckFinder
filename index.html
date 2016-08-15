@@ -2,10 +2,27 @@
 <html>
 <head>
 	<title></title>
+	    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 50%;
+      }
+    </style>
 </head>
 <body>
+<div class="container">
+	<input placeholder="location" id="address" />
+	<input type="submit" id="submit" />
+</div>
+<div id="map"></div>
 
 <script type="text/javascript" src="js/jquery-3.1.0.js"></script>
 <script type="text/javascript" src="app.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD5vQG68S8OQc2Fdwz2oIDpdE91gd96Ua0&callback=initMap"
+async defer></script>
 </body>
 </html>
