@@ -47,24 +47,28 @@ function getTrucks(lat, lng){
 		success: function(data){
 			console.log(data);
 			for (let i = 0; i < data.length; i++) {
-				(function(){
+
 					markers.push(new google.maps.Marker({
 									position: {lat: parseFloat(data[i].latitude), lng: parseFloat(data[i].longitude)},
 									map: map,
 									title: data[i].applicant
 								}));
 
-					var contentString = data[i].applicant + data[i].dayshours + data[i].fooditems
-					infowindow = new google.maps.InfoWindow({
-    									content: contentString
-  								});
+
 
 					markers[i].addListener('click', function(){
+						let contentString = data[i].applicant + data[i].dayshours + data[i].fooditems
+						if(infowindow){
+							infowindow.close();
+						}
+						infowindow = new google.maps.InfoWindow({
+	    									content: contentString
+	  								});
 						infowindow.open(map, markers[i])
 					});
 
 					console.log(data[i].applicant, parseFloat(data[i].latitude), parseFloat(data[i].longitude))
-				})();
+
 			}
 		}
 	});
