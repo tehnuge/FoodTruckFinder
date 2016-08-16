@@ -2,7 +2,7 @@
   "name": "foodtruckfinder",
   "version": "1.0.0",
   "description": "find food trucks in SF",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
     "start": "node server.js",
     "test": "./node_modules/.bin/mocha --reporter spec"
