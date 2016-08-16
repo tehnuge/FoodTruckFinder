@@ -8,7 +8,7 @@
   },
   "scripts": {
     "start": "node server.js",
-    "test": "./node_modules/.bin/mocha --reporter spec"
+    "test": "mocha tests/test.js"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.11.1",
     "chai": "^3.5.0",
     "mocha": "^3.0.2",
+    "mocha-phantomjs": "^4.1.0",
     "supertest": "^2.0.0",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.14.1"

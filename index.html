@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 50%;
-      }
-    </style>
+	<title>SF Food Truck Finder</title>
+<link rel="stylesheet" type="text/css" href="bin/css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="bin/css/custom.css">
 </head>
+
 <body>
 <div class="container">
-	<input placeholder="location" id="address" />
-	<input type="submit" id="submit" />
+  <div class="row" id="userInputs">
+  	<input placeholder="location" id="address" />
+    <input placeholder="range (miles)" id="range" />
+  	<input type="submit" id="submit" />
+    <div id="Nan">
+      <p class="bg-warning"> Please enter a number.</p>
+    </div>
+    <div id="noResults">
+      <p class="bg-warning">That didn't return any results. Try changing the location or increasing the range.</p>
+    </div>
+  </div>
 </div>
 <div id="map"></div>
 

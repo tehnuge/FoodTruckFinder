@@ -1,14 +1,13 @@
 var expect = require('chai').expect;
-var appFile = require('../src/js/app.js')
+var appFile = require('../bin/bundle.js');
 
 var assert = require('assert');
-describe('SimpleTest', function() {
 
+
+describe('Food truck finder', function() {
+	it('Should let the user know when the results are empty', function() {
+		var address = '';
+		var result = appFile.validateInputs(address, '');
+		expect(result).to.equal(0);
+	})
 })
-describe('Array', function() {
-  describe('#indexOf()', function() {
-    it('should return -1 when the value is not present', function() {
-      assert.equal(-1, [1,2,3].indexOf(4));
-    });
-  });
-});
