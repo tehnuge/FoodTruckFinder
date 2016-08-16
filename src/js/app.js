@@ -1,3 +1,4 @@
+var $ = require('jquery');
 var exports = module.exports = {}	
 
 var url = 'https://data.sfgov.org/resource/6a9r-agq8.json';
@@ -6,7 +7,14 @@ var lat, lng, map, infowindow;
 var markers = [];
 var center = {lat: 37.756367, lng: -122.44370};
 
-//37.781007, -122.457992
+//Google Maps initialization
+exports.initMap = function() {
+
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 12,
+    center: center
+  });
+}
 
 //handle address
 $("#submit").click(function(){
@@ -66,22 +74,14 @@ function getTrucks(lat, lng){
 	  								});
 						infowindow.open(map, markers[i])
 					});
-
 					console.log(data[i].applicant, parseFloat(data[i].latitude), parseFloat(data[i].longitude))
-
 			}
 		}
 	});
+	return markers
 }
 
-//Google Maps init
-exports.initMap = function() {
 
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: center
-  });
-}
 
 
 //Mobile screen detection
