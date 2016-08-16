@@ -4,6 +4,7 @@
   "description": "find food trucks in SF",
   "main": "app.js",
   "scripts": {
+    "start": "node server.js",
     "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "repository": {
