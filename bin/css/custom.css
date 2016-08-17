@@ -14,3 +14,11 @@ html, body {
 #noResults{
 	display: none;
 }
+
+#userInputs {
+	margin: 30px;
+}
+
+p {
+	display: inline;
+}

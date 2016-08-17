@@ -8,15 +8,22 @@
 
 <body>
 <div class="container">
-  <div class="row" id="userInputs">
+  <h1 class="row text-center" id="header">
+    SF Food Truck Finder
+  </h1>
+  <h4 class="row text-center">
+    Find mobile food near you!
+  </h4>
+  <div class="row text-center" id="userInputs">
+    <p>Enter an address/location: </p>
   	<input placeholder="location" id="address" />
     <input placeholder="range (miles)" id="range" />
   	<input type="submit" id="submit" />
     <div id="Nan">
-      <p class="bg-warning"> Please enter a number.</p>
+      <p class="bg-warning"> Please enter a number in the range.</p>
     </div>
     <div id="noResults">
-      <p class="bg-warning">That didn't return any results. Try changing the location or increasing the range.</p>
+      <p class=" bg-warning">That didn't return any results. Try changing the location or increasing the range.</p>
     </div>
   </div>
 </div>
