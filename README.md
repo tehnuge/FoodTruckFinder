@@ -1,5 +1,6 @@
 #Food Truck Finder
 
+
 [View the live version here](https://foodtruckfinderapp.herokuapp.com/)
 
 This application is a service to find nearby food trucks in San Francisco. The website focuses on the front-end since currently it does not store persistent data. The front-end is built with JQuery and Webpack. Webpack enables the codebase to be seperated into modules and bundles the Javascript into a single .js file allowing users to make a single network request to get all the Javascript required to run the page. The back-end is served by Node.js and the ExpressJS framework. Express is a lightweight framework that makes it easy to serve a webpage; because it is so lightweight, additional features to the app would take more setup than if this site was created with a full stack framework such as Ruby on Rails or Django. MochaJS + phantomJS is used for testing. 
