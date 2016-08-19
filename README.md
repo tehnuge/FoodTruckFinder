@@ -8,13 +8,13 @@ Upon implementing these features, I would also consider porting the front-end to
 
 ##Running the project on your machine
 
--In the directory that you would like to install the project, clone the repo by running the following in the Terminal: ``git clone https://github.com/tehnuge/FoodTruckFinder.git``
--Run ``npm install``
--Run ``npm start``
--Go to ``localhost:5000`` in your browser.
+- In the directory that you would like to install the project, clone the repo by running the following in the Terminal: ``git clone https://github.com/tehnuge/FoodTruckFinder.git``
+- Run ``npm install``
+- Run ``npm start``
+- Go to ``localhost:5000`` in your browser.
 
 ##Testing
--Run ``npm test``
+- Run ``npm test``
 
 ##Other projects
 For examples of a project where I used ReactJS, please see [this repo](https://github.com/tehnuge/FruitExchange)
