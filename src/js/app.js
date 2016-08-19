@@ -10,16 +10,8 @@ var SFGovUrl = 'https://data.sfgov.org/resource/6a9r-agq8.json',
 	markers = [],
 	center = {lat: 37.756367, lng: -122.44370},
 	NanDiv = document.getElementById("Nan"),
-	noResultsDiv = document.getElementById("noResults");
-
-
-// Google Maps initialization
-exports.initMap = function() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 12,
-    center: center
-  });
-}
+	noResultsDiv = document.getElementById("noResults"),
+	zoom = 13;
 
 
 // Add event handlers for input fields
@@ -36,6 +28,15 @@ $("#submit").click(function() {
 		inputRange = $('#range').val();
 	validateInputs(inputAddress, inputRange);
 });
+
+
+// Google Maps initialization
+exports.initMap = function() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: zoom,
+    center: center
+  });
+}
 
 var validateInputs = function(inputAddress, inputRange) {
 	noResultsDiv.style.display = 'none';
